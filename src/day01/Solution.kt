@@ -1,3 +1,7 @@
+package day01
+
+import readInput
+
 data class Elf(val i: Int, val calories: Int)
 
 fun Elf(i: Int, items: List<String>) = Elf(i, items.sumOf { it.toInt() })
@@ -20,12 +24,12 @@ fun main() {
     fun part2(elves: List<Elf>): Int = elves.take(3).sumOf { it.calories }
 
     // test if implementation meets criteria from the description, like:
-    val testInput = readInput("Day01_test")
+    val testInput = readInput("day01/data_test")
     val testElves = sortedElves(testInput)
     check(part1(testElves) == 24000)
     check(part2(testElves) == 45000)
 
-    val input = readInput("Day01")
+    val input = readInput("day01/data")
     val elves = sortedElves(input)
     println(part1(elves))
     println(part2(elves))
